@@ -1,13 +1,14 @@
 # Ex02 Django ORM Web Application
-## Date: 26/9/24
+## Date: 19-10-2024
+## NAME: MOHAMED FAIZAL
+## REGISTER NO: 24000006
 
 ## AIM
-To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
+To develop a Django application to store and retrieve data from a Bank database using Object Relational Mapping(ORM).
 
-## ENTITY RELATIONSHIP DIAGRAM
+## Entity Relationship Diagram
 
-![Screenshot 2024-09-28 083239](https://github.com/user-attachments/assets/7497140e-4cb9-4862-8d52-ba737fb5e66b)
-
+![Screenshot 2024-10-03 114132 (1)](https://github.com/user-attachments/assets/9621fda5-b676-4698-afbc-84e8eea43c5c)
 
 
 
@@ -23,40 +24,41 @@ Create a new app in Django project
 Enter the code for admin.py and models.py
 
 ### STEP 4:
-Execute Django admin and create details for 10 books
+Execute Django admin and create details for 10 customers.
 
-## PROGRAM:
+## PROGRAM
 
-admin.py
+admin.py:
 ```
 from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
+from .models import Bankloan, BankloanAdmin  
+admin.site.register(Bankloan, BankloanAdmin)
 ```
-models.py
+models.py:
 ```
 from django.db import models
 from django.contrib import admin
-class Employee (models.Model):
-    eid=models.IntegerField(primary_key=True)
-    name=models.CharField(max_length=100)
-    salary=models.IntegerField()
-    age=models.IntegerField()
-    email=models.EmailField()
- 
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display=('eid','name','salary','age','email')
+from django.db import models
+from django.contrib import admin
 
+class Bankloan(models.Model):
+    customerid= models.IntegerField(primary_key=True)
+    customerrate = models.IntegerField()
+    age = models.IntegerField()  
+    cust_no = models.IntegerField()
+    customerloan_purpose =models.CharField(max_length=500)
 
+class BankloanAdmin(admin.ModelAdmin):
+    list_display = ('customerid', 'customerrate', 'age', 'cust_no', 'customerloan_purpose')
 ```
 
-
-
 ## OUTPUT
-![Screenshot 2024-09-26 203116](https://github.com/user-attachments/assets/16166afc-7dc4-442f-b923-d12d7761b942)
 
+
+![BANK IMG](https://github.com/user-attachments/assets/ecf232e6-84ac-40d1-9b7e-ade1cdde3bfb)
 
 
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
+
