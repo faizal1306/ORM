@@ -1,14 +1,11 @@
 # Ex02 Django ORM Web Application
-## Date: 19-10-2024
-## NAME: MOHAMED FAIZAL
-## REGISTER NO: 24000006
+## Name:
+## Date:
 
 ## AIM
-To develop a Django application to store and retrieve data from a Bank database using Object Relational Mapping(ORM).
+To develop a Django application to store and retrieve data from Movies Database using Object Relational Mapping(ORM).
 
-## Entity Relationship Diagram
-
-![Screenshot 2024-10-03 114132 (1)](https://github.com/user-attachments/assets/9621fda5-b676-4698-afbc-84e8eea43c5c)
+## ENTITY RELATIONSHIP DIAGRAM
 
 
 
@@ -24,41 +21,40 @@ Create a new app in Django project
 Enter the code for admin.py and models.py
 
 ### STEP 4:
-Execute Django admin and create details for 10 customers.
+Execute Django admin and create details for 10 books
 
 ## PROGRAM
-
-admin.py:
 ```
-from django.contrib import admin
-from .models import Bankloan, BankloanAdmin  
-admin.site.register(Bankloan, BankloanAdmin)
-```
-models.py:
-```
+models.py
 from django.db import models
 from django.contrib import admin
-from django.db import models
-from django.contrib import admin
+class Movie(models.Model):
+    USER_ID = models.CharField(max_length=300,help_text='USER ID')
+    USER_NAME = models.CharField(max_length=300)
+    PHONE_NUMBER = models.IntegerField()
+    EMAIL = models.EmailField()
+    MOVIE_NAME = models.CharField(max_length=300)
+    DATE = models.DateField()
+    SHOW_TIME = models.TimeField()
+    SEATS_Number= models.IntegerField()
 
-class Bankloan(models.Model):
-    customerid= models.IntegerField(primary_key=True)
-    customerrate = models.IntegerField()
-    age = models.IntegerField()  
-    cust_no = models.IntegerField()
-    customerloan_purpose =models.CharField(max_length=500)
+class MovieAdmin(admin.ModelAdmin):
+    list_display = ('USER_ID', 'USER_NAME', 'PHONE_NUMBER', 'EMAIL', 'MOVIE_NAME', 'DATE','SEATS_Number','SHOW_TIME')
 
-class BankloanAdmin(admin.ModelAdmin):
-    list_display = ('customerid', 'customerrate', 'age', 'cust_no', 'customerloan_purpose')
+    admin.py
+    from django.contrib import admin
+from .models import Movie,MovieAdmin
+
+admin.site.register(Movie,MovieAdmin)
+
 ```
+
 
 ## OUTPUT
+<img width="1039" height="614" alt="Screenshot 2025-09-20 133011" src="https://github.com/user-attachments/assets/bb9a6b2e-4476-475e-bd20-3a520867ecf4" />
 
-
-![BANK IMG](https://github.com/user-attachments/assets/ecf232e6-84ac-40d1-9b7e-ade1cdde3bfb)
 
 
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
-
