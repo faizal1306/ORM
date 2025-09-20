@@ -1,5 +1,5 @@
 # Ex02 Django ORM Web Application
-## Name:
+## Name: Moahmed Faizal M
 ## Date:
 
 ## AIM
